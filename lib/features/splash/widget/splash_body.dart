@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/conestent/assets.dart';
+import '../../../core/conestent/colors.dart';
 import '../../home/view/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -35,16 +37,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   Widget build(BuildContext context) {
     return Container(
-     color:Colors.black,
+     color:AppColors.primary,
         child: Center(
           child: AnimatedOpacity(
             duration: const Duration(seconds: 1),
             opacity: _opacity,
             curve: Curves.easeInOut,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-              const Gap(400),
+              // const Gap(400),
                 Center(
                   child: TweenAnimationBuilder<double>(
                     tween: Tween(begin: 0.8, end: 1.0),
@@ -52,7 +55,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
                     curve: Curves.easeOutBack,
                     builder: (context, scale, child) =>
                         Transform.scale(scale: scale, child: child),
-                    child: Image.asset('assets/images/Logo.png'),
+                    child: Image.asset(Assets.imagesLogo),
                   ),
                 ),
 
