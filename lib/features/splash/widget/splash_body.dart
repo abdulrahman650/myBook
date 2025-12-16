@@ -36,6 +36,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
+    final text = Theme.of(context).textTheme;
     return Container(
      color:AppColors.primary,
         child: Center(
@@ -47,17 +48,25 @@ class _SplashViewBodyState extends State<SplashViewBody>
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-              // const Gap(400),
-                Center(
-                  child: TweenAnimationBuilder<double>(
-                    tween: Tween(begin: 0.8, end: 1.0),
-                    duration: const Duration(milliseconds: 800),
-                    curve: Curves.easeOutBack,
-                    builder: (context, scale, child) =>
-                        Transform.scale(scale: scale, child: child),
-                    child: Image.asset(Assets.imagesLogo),
-                  ),
+                TweenAnimationBuilder<double>(
+                  tween: Tween(begin: 0.8, end: 1.0),
+                  duration: const Duration(milliseconds: 800),
+                  curve: Curves.easeOutBack,
+                  builder: (context, scale, child) =>
+                      Transform.scale(scale: scale, child: child),
+                  child: Image.asset(Assets.imagesLogo),
                 ),
+                Gap(5),
+                TweenAnimationBuilder<double>(
+                  tween: Tween(begin: 0.8, end: 1.0),
+                  duration: const Duration(milliseconds: 800),
+                  curve: Curves.easeOutBack,
+                  builder: (context, scale, child) =>
+                      Transform.scale(scale: scale, child: child),
+                  child: Text("Reed Free Books",style: text.titleMedium,
+                    textAlign: TextAlign.center,
+                  ))
+
 
 
               ],
