@@ -60,7 +60,7 @@ class AppTheme {
       ),
       titleLarge: TextStyle(
         fontSize: 20,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.bold,
         color: AppColors.white,
       ),
       titleMedium: TextStyle(
