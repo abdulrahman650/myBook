@@ -16,6 +16,8 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   double _opacity = 0.0;
+  late AnimationController animationController;
+  late Animation<Offset> slidingAnimation;
 
   Future<void> _checkLogin() async {
     await Navigator.pushReplacement(
@@ -26,29 +28,41 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   void initState() {
+    animationController = AnimationController(vsync: this,
+    duration: const   Duration(seconds: 1),
+    );
+    slidingAnimation = Tween<Offset>(begin: Offset(0, 4), end: Offset.zero)
+        .animate(animationController);
+    animationController.forward();
+
     super.initState();
     Future.delayed(
       const Duration(milliseconds: 200),
       () => setState(() => _opacity = 1.0),
     );
-    Future.delayed(const Duration(seconds: 10), _checkLogin);
+    Future.delayed(const Duration(seconds: 4), _checkLogin);
   }
 
+  @override
+void dispose(){
+    super.dispose();
+    animationController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
     return Container(
      color:AppColors.primary,
         child: Center(
-          child: AnimatedOpacity(
-            duration: const Duration(seconds: 1),
-            opacity: _opacity,
-            curve: Curves.easeInOut,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                TweenAnimationBuilder<double>(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              AnimatedOpacity(
+                duration: const Duration(seconds: 1),
+                opacity: _opacity,
+                curve: Curves.easeInOut,
+                child: TweenAnimationBuilder<double>(
                   tween: Tween(begin: 0.8, end: 1.0),
                   duration: const Duration(milliseconds: 800),
                   curve: Curves.easeOutBack,
@@ -56,21 +70,30 @@ class _SplashViewBodyState extends State<SplashViewBody>
                       Transform.scale(scale: scale, child: child),
                   child: Image.asset(Assets.imagesLogo),
                 ),
-                Gap(5),
-                TweenAnimationBuilder<double>(
-                  tween: Tween(begin: 0.8, end: 1.0),
-                  duration: const Duration(milliseconds: 800),
-                  curve: Curves.easeOutBack,
-                  builder: (context, scale, child) =>
-                      Transform.scale(scale: scale, child: child),
-                  child: Text("Reed Free Books",style: text.titleMedium,
-                    textAlign: TextAlign.center,
-                  ))
+              ),
+              Gap(5),
+              AnimatedBuilder(
+                animation: slidingAnimation,
+                builder: (context,_){
+                  return SlideTransition(position: slidingAnimation,
 
+                      child: Text("Reed Free Books",style: text.titleMedium,
+                        textAlign: TextAlign.center,
+                      ));
+                },
+              // TweenAnimationBuilder<double>(
+              //   tween: Tween(begin: 0.8, end: 1.0),
+              //   duration: const Duration(milliseconds: 800),
+              //   curve: Curves.easeOutBack,
+              //   builder: (context, scale, child) =>
+              //       Transform.scale(scale: scale, child: child),
+              //   child: Text("Reed Free Books",style: text.titleMedium,
+              //     textAlign: TextAlign.center,
+              //   ))
 
+              )
 
-              ],
-            ),
+            ],
           ),
         ),
 
