@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'colors.dart';
 
 class AppTheme {
@@ -6,6 +7,10 @@ class AppTheme {
     // scaffoldBackgroundColor: AppColors.backgroundWhite,
     appBarTheme: AppBarTheme(
       // backgroundColor: AppColors.backgroundWhite,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.light,
+      ),
       centerTitle: true,
       titleTextStyle: TextStyle(
         fontSize: 22,
@@ -98,6 +103,10 @@ class AppTheme {
   static ThemeData CustomeDarkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.primary,
     appBarTheme: AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.dark,
+      ),
       // backgroundColor: AppColors.backgroundDark,
       centerTitle: true,
       titleTextStyle: TextStyle(
@@ -107,7 +116,11 @@ class AppTheme {
       ),
     ),
 
-
+    brightness: Brightness.dark,
+    iconTheme: IconThemeData(color: AppColors.white),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(iconColor: WidgetStateProperty.all(AppColors.white)),
+    ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       // backgroundColor: AppColors.backgroundDark,
       foregroundColor: AppColors.white,
@@ -136,7 +149,7 @@ class AppTheme {
 
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.white,
         // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
     ),
@@ -171,7 +184,7 @@ class AppTheme {
 
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: AppColors.primary,
+        foregroundColor: AppColors.white,
         textStyle: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
