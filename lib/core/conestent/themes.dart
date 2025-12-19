@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'assets.dart';
 import 'colors.dart';
 
 class AppTheme {
@@ -52,32 +54,36 @@ class AppTheme {
       ),
     ),
 
-    textTheme: TextTheme(
-      headlineSmall: TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: AppColors.white,
-      ),
-      titleLarge: TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-        color: AppColors.white,
-      ),
-      titleMedium: TextStyle(
-        fontSize: 16,
-        color: AppColors.black,
-      ),
-      titleSmall: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        color: AppColors.white,
-      ),
-      displaySmall: TextStyle(
-        fontSize: 36,
-        fontWeight: FontWeight.bold,
-        color: AppColors.white,
+    textTheme: GoogleFonts.montserratTextTheme(
+      TextTheme(
+        headlineSmall: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: AppColors.white,
+        ),
+        titleLarge: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: AppColors.white,
+          fontFamily: Assets.kGtSectraFine,
+        ),
+        titleMedium: TextStyle(
+          fontSize: 16,
+          color: AppColors.black,
+        ),
+        titleSmall: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          color: AppColors.white,
+        ),
+        displaySmall: TextStyle(
+          fontSize: 36,
+          fontWeight: FontWeight.bold,
+          color: AppColors.white,
+        ),
       ),
     ),
+
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: AppColors.primary,

@@ -32,7 +32,9 @@ class HomeViewBody extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
                   "Best Seller",
-                  style: text.titleLarge!.copyWith(fontSize: 22),
+                  style: text.titleLarge!.copyWith(fontSize: 22
+                  ,fontFamily: Assets.kGtSectraFine,
+                  ),
                 ),
               ),
               Gap(20),
