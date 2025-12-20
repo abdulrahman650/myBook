@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
+import 'custom_book_details_app_bar.dart';
+class BooksDetailsViewBody extends StatelessWidget {
+  const BooksDetailsViewBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        children: [
+          Gap(40),
+          CustomBookDetailsAppBar(),
+        ],
+      ),
+    );
+  }
+}

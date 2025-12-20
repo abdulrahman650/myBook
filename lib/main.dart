@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mybook/core/conestent/themes.dart';
 import 'package:mybook/features/splash/view/splash_view.dart';
 
+import 'features/books_details/view/widgets_books_details/books_datiles_view_body.dart';
+
 void main() {
   runApp(const MyBook());
 }
@@ -20,7 +22,7 @@ class MyBook extends StatelessWidget {
 
      // textTheme:
       // GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
-      home: SplashView(),
+      home: BooksDetailsViewBody(),
     );
   }
 }
