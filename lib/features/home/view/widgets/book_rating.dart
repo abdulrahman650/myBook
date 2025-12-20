@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../../core/conestent/colors.dart';
+
 class BookRating extends StatelessWidget {
   const BookRating({
     super.key,
@@ -22,7 +24,7 @@ class BookRating extends StatelessWidget {
         const Icon(
           FontAwesomeIcons.solidStar,
           size: 14,
-          color: Color(0xffFFDD4F),
+          color: AppColors.yellow,
         ),
         const SizedBox(
           width: 6.3,

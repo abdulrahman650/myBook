@@ -43,7 +43,7 @@ class BookListViewItem extends StatelessWidget {
                   Text(
                     "strong animal",
                     style: text.titleSmall!.copyWith(
-                      fontFamily: Assets.kGtSectraFine,
+                      // fontFamily: Assets.kGtSectraFine,
                     ),
                   ),
                   Gap(3),
