@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import 'books_details_section.dart';
 import 'custom_book_details_app_bar.dart';
 class BooksDetailsViewBody extends StatelessWidget {
   const BooksDetailsViewBody({super.key});
@@ -13,6 +14,8 @@ class BooksDetailsViewBody extends StatelessWidget {
         children: [
           Gap(40),
           CustomBookDetailsAppBar(),
+          BookDetailsSection(),
+          Expanded(child: Gap(50)),
         ],
       ),
     );
