@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:go_router/go_router.dart';
-
-import '../../../core/conestent/assets.dart';
 import '../../../core/conestent/colors.dart';
+import '../../../core/utils/app_router.dart';
 import '../../home/view/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -20,20 +16,21 @@ class _SplashViewBodyState extends State<SplashViewBody>
   double _opacity = 0.0;
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
-
-  Future<void> goHome() async {
-    await Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (c) => HomeView()),
-    );
-  }
-
   @override
   void initState() {
     super.initState();
     initAnimations();
 
   }
+  Future<void> goHome() async {
+    await  Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => const HomeView()),
+    );
+
+  }
+
+
 
   @override
 void dispose(){
