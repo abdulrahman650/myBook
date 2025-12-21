@@ -17,11 +17,13 @@ class MyBook extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.CustomeDarkTheme,
       darkTheme: AppTheme.CustomeDarkTheme,
-      home: const SplashView(),
+
+      // home: const SplashView(),
 //       routes:{
 //   AppRouter.SplashView: (_) => SplashView(),
 //   AppRouter.homeView: (_) => HomeView(),

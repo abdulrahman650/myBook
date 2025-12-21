@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/conestent/colors.dart';
 import '../../../core/utils/app_router.dart';
 import '../../home/view/home_view.dart';
@@ -23,10 +24,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   }
   Future<void> goHome() async {
-    await  Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (_) => const HomeView()),
-    );
+    
+    await GoRouter.of(context).push("/homeView");
+    // await  Navigator.pushReplacement(
+    //   context,
+    //   MaterialPageRoute(builder: (_) => const HomeView()),
+    // );
 
   }
 

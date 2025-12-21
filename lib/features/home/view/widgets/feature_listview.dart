@@ -23,11 +23,13 @@ class FeaturedBooksListView extends StatelessWidget {
                   onTap:()
                   // {Navigator.pop(context, AppRouter.bookDetailsView,);},
                   {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const BookDetailsView()),
-                    );
+                    GoRouter.of(context).push(AppRouter.bookDetailsView);
+
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (_) => const BookDetailsView()),
+                    // );
                   },
                   child: CustomBookImage()),
             );
