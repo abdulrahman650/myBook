@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../core/conestent/assets.dart';
 import '../../../home/view/widgets/book_rating.dart';
 import '../../../home/view/widgets/custom_book_item.dart';
 import 'books_action.dart';
@@ -28,6 +29,7 @@ class BookDetailsSection extends StatelessWidget {
           "Strong Animal",
           style: text.displaySmall!.copyWith(
             fontSize: 30,
+            fontFamily: Assets.kGtSectraFine,
           ),
           textAlign: TextAlign.center,
         ),
