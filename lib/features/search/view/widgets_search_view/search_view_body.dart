@@ -10,19 +10,22 @@ class SearchViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
 
-    return Column(
-      children: [
-        CustomSearchTextField(),
-        Gap(16),
-        Text(
-          'Search Result',
-          style: text.titleMedium,
-        ),
-        Gap(16),
-        Expanded(
-          child: SearchResultListView(),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        children: [
+          CustomSearchTextField(),
+          Gap(16),
+          Text(
+            'Search Result',
+            style: text.titleMedium,
+          ),
+          Gap(16),
+          Expanded(
+            child: SearchResultListView(),
+          ),
+        ],
+      ),
     );
   }
 }
