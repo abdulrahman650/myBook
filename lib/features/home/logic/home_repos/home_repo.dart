@@ -4,6 +4,6 @@ import 'package:mybook/features/home/data/book_model.dart';
 import '../../../../core/erorrs/failures.dart';
 
 abstract class HomeRepo{
- Future<Either<Failure,List<BookModel>>> fetchBestSellerBooks();
+ Future<Either<Failure,List<BookModel>>> fetchNewSetBooks();
  Future<Either<Failure,List<BookModel>>> fetchFeaturedBooks();
 }
