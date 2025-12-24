@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
 import '../../data/book_model.dart';
+import '../../data/book_model/book_model.dart';
 import '../home_repos/home_repo.dart';
 
 part 'newest_books_state.dart';

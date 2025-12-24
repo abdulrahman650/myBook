@@ -3,6 +3,8 @@ import 'package:meta/meta.dart';
 import 'package:mybook/features/home/data/book_model.dart';
 import 'package:mybook/features/home/logic/home_repos/home_repo.dart';
 
+import '../../data/book_model/book_model.dart';
+
 part 'featured_books_state.dart';
 
 class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {

@@ -5,6 +5,8 @@ import 'package:mybook/core/services/api_services.dart';
 import 'package:mybook/features/home/data/book_model.dart';
 import 'package:mybook/features/home/logic/home_repos/home_repo.dart';
 
+import '../../data/book_model/book_model.dart';
+
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
 
