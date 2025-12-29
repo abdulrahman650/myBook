@@ -25,7 +25,7 @@ class FeaturedBooksListView extends StatelessWidget {
                 .height * .3,
             child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
-                itemCount: 10,
+                itemCount: state.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Padding(
@@ -34,7 +34,9 @@ class FeaturedBooksListView extends StatelessWidget {
                         onTap: () {
                           GoRouter.of(context).push(AppRouter.bookDetailsView);
                         },
-                        child: CustomBookImage()),
+                        child: CustomBookImage(
+                          imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail
+                        )),
                   );
                 }),
           );

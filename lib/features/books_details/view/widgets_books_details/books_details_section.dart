@@ -21,6 +21,7 @@ class BookDetailsSection extends StatelessWidget {
             horizontal: width * .2,
           ),
           child: CustomBookImage(
+            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxdFOtQZHZ3gaGAZIbaWT8QP5TMj-bXQp5pA&s",
             // imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
           ),
         ),
