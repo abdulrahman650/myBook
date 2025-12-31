@@ -4,11 +4,12 @@ import 'package:go_router/go_router.dart';
 import 'package:mybook/features/home/view/widgets/custom_book_item.dart';
 import '../../../../core/conestent/assets.dart';
 import '../../../../core/utiles/app_router.dart';
+import '../../data/book_model/book_model.dart';
 import 'book_rating.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
-
+  const BookListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
@@ -16,54 +17,55 @@ class BookListViewItem extends StatelessWidget {
       onTap: () {
         GoRouter.of(context).push(AppRouter.bookDetailsView);
       },
-      child: SizedBox(
-        height: 125,
-        child: Row(
-          children: [
-            CustomBookImage(
-              imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxdFOtQZHZ3gaGAZIbaWT8QP5TMj-bXQp5pA&s",
+      child: Row(
+        children: [
+          SizedBox(
+            height: 125,
+            child: CustomBookImage(
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
             ),
-            Gap(30),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * .5,
-                    child: Text(
-                      "Tiger Animal",
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+          ),
+          Gap(30),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Text(
+                    bookModel.volumeInfo.title!,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: text.titleLarge!.copyWith(
+                      fontFamily: Assets.kGtSectraFine,
+                    ),
+                  ),
+                ),
+                Gap(3),
+                Text(
+                  bookModel.volumeInfo.authors?[0] ?? '',
+                  style: text.titleSmall!.copyWith(
+                  ),
+                ),
+                Gap(3),
+                Row(
+                  children: [
+                    Text(
+                      "Free",
                       style: text.titleLarge!.copyWith(
                         fontFamily: Assets.kGtSectraFine,
                       ),
                     ),
-                  ),
-                  Gap(3),
-                  Text(
-                    "strong animal",
-                    style: text.titleSmall!.copyWith(
-                      // fontFamily: Assets.kGtSectraFine,
-                    ),
-                  ),
-                  Gap(3),
-                  Row(
-                    children: [
-                      Text(
-                        "Free",
-                        style: text.titleLarge!.copyWith(
-                          fontFamily: Assets.kGtSectraFine,
-                        ),
-                      ),
-                      const Spacer(),
-                      BookRating(rating: 0, count: 0),
-                    ],
-                  ),
-                ],
-              ),
+                    const Spacer(),
+                    BookRating(
+                      rating: bookModel.volumeInfo.averageRating?.toInt() ?? 0,
+                      count: bookModel.volumeInfo.ratingsCount ?? 0,
+                    ),                  ],
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
