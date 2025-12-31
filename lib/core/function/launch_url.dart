@@ -1,5 +1,6 @@
-import 'package:bookly/core/function/custom_snack_barr.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'custom_snack_barr.dart';
 
 Future<void> launchCustomUrl(context, String? url) async {
   if (url != null) {
