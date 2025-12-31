@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text("My Books",style:text.titleLarge!.copyWith(
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
             fontFamily: Assets.kGtSectraFine,
           ),
           ),

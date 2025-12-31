@@ -43,10 +43,11 @@ class HomeViewBody extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Text(
-                        "Best Seller",
+                        "Newest Books",
                         style: Theme.of(context).textTheme.titleLarge!
                             .copyWith(
                           fontSize: 22,
+                          fontWeight: FontWeight.w600,
                           fontFamily: Assets.kGtSectraFine,
                         ),
                       ),
