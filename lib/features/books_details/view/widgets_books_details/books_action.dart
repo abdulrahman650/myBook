@@ -29,7 +29,6 @@ class BooksAction extends StatelessWidget {
             },
             fontSize: 16,
             textt: getText(bookModel),
-            // getText(bookModel),
             backgroundColor: const Color(0xffEF8262),
             textColor: Colors.white,
             borderRadius: const BorderRadius.only(
