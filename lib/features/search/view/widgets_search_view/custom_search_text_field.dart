@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../logic/search_cubit/search_cubit.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   const CustomSearchTextField({super.key});
@@ -7,12 +10,17 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onSubmitted: (value) {
+        BlocProvider.of<SearchCubit>(context).SearchBooks(query: value);
+      },
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
         hintText: 'Search',
         suffixIcon: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            FocusScope.of(context).unfocus();
+          },
           icon: const Opacity(
             opacity: .8,
             child: Icon(
