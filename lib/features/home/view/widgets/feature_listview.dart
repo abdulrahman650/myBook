@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mybook/features/books_details/view/widgets_books_details/books_datiles_view_body.dart';
 import 'package:mybook/features/home/logic/featured_books_cubit/featured_books_cubit.dart';
 import '../../../../core/utiles/app_router.dart';
 import '../../../../core/utiles/custom_error_widget.dart';
 import '../../../../core/utiles/custom_loading_indicator.dart';
-import '../../../books_details/view/book_details_view.dart';
 import 'custom_book_item.dart';
 
 class FeaturedBooksListView extends StatelessWidget {

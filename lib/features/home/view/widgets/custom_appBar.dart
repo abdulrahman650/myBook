@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mybook/core/utils/app_router.dart';
+
+import '../../../../core/conestent/assets.dart';
+import '../../../../core/utiles/app_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -16,6 +18,7 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Text("My Books",style:text.titleLarge!.copyWith(
             fontWeight: FontWeight.bold,
+            fontFamily: Assets.kGtSectraFine,
           ),
           ),
           IconButton(onPressed: (){

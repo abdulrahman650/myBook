@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/conestent/assets.dart';
+import '../../logic/featured_books_cubit/featured_books_cubit.dart';
+import '../../logic/newest_books_cubit/newest_books_cubit.dart';
 import 'best_seller_listView.dart';
 import 'custom_book_item.dart';
 import 'custom_appBar.dart';
@@ -13,41 +17,55 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final text = Theme.of(context).textTheme;
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
+      builder: (context, state) {
+        return Skeletonizer(
+          enabled:
+          state is FeaturedBooksLoading ||
+              context.watch<NewestBooksCubit>().state is NewestBooksLoading,
+          // enabled: state is FeaturedBooksLoading,
+          child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverToBoxAdapter(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 30),
+                      child: CustomAppBar(),
+                    ),
 
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverToBoxAdapter(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: CustomAppBar(),
-              ),
-              FeaturedBooksListView(),
-              Gap(50),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  "Best Seller",
-                  style: text.titleLarge!.copyWith(fontSize: 22
-                  ,fontFamily: Assets.kGtSectraFine,
-                  ),
+                    const FeaturedBooksListView(),
+
+                    const Gap(50),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Text(
+                        "Best Seller",
+                        style: Theme.of(context).textTheme.titleLarge!
+                            .copyWith(
+                          fontSize: 22,
+                          fontFamily: Assets.kGtSectraFine,
+                        ),
+                      ),
+                    ),
+                    const Gap(20),
+                  ],
                 ),
               ),
-              Gap(20),
+              const SliverFillRemaining(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: BestSellerListview(),
+                ),
+              ),
             ],
           ),
-        ),
-        const SliverFillRemaining(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
-            child: BestSellerListview(),
-          ),
-        ),
-      ],
+        );
+      },
     );
   }
 }
+

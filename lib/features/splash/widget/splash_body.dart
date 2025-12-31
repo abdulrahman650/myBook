@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import '../../../core/conestent/assets.dart';
 import '../../../core/conestent/colors.dart';
-import '../../../core/utils/app_router.dart';
 import '../../home/view/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -24,12 +24,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   }
   Future<void> goHome() async {
-    
     await GoRouter.of(context).push("/homeView");
-    // await  Navigator.pushReplacement(
-    //   context,
-    //   MaterialPageRoute(builder: (_) => const HomeView()),
-    // );
 
   }
 
@@ -64,7 +59,9 @@ void dispose(){
                  Text("My Books",style:text.displaySmall!.copyWith(
                    fontWeight: FontWeight.bold,
                    fontSize: 70,
+                   fontFamily: Assets.kGtSectraFine,
                  ),
+
                   textAlign: TextAlign.center,
                 )
                   // Image.asset(Assets.imagesLogo),
@@ -75,8 +72,11 @@ void dispose(){
                 animation: slidingAnimation,
                 builder: (context,_){
                   return SlideTransition(position: slidingAnimation,
-                      child: Text("Reed Free Books",style: text.titleMedium,
+                      child: Text("Reed Free Books",style: text.titleMedium!.copyWith(
+                        fontFamily: Assets.kGtSectraFine,
+                      ),
                         textAlign: TextAlign.center,
+
                       ));
                 },
 

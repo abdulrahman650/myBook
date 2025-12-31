@@ -46,6 +46,7 @@ dependencies:
   url_launcher:
   flutter_lints:
   gap:
+  skeletonizer:
 
 dev_dependencies:
   flutter_test:
