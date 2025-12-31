@@ -15,7 +15,7 @@ class BookListViewItem extends StatelessWidget {
     final text = Theme.of(context).textTheme;
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.bookDetailsView);
+        GoRouter.of(context).push(AppRouter.bookDetailsView,extra: bookModel);
       },
       child: Row(
         children: [
