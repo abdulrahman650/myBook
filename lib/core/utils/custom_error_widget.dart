@@ -1,11 +1,19 @@
+
 import 'package:flutter/material.dart';
-class CustomErrorWidget extends StatelessWidget {
-  const CustomErrorWidget({super.key, required this.errMessage});
-final String errMessage;
+class CustomErrorsWidget extends StatelessWidget {
+  const CustomErrorsWidget({super.key, required this.errorMessage});
+  final String errorMessage;
+
   @override
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
 
-    return Text(errMessage,style: text.titleMedium,);
+    return Center(
+      child: Text(
+        errorMessage,
+        style: text.titleMedium,
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 }
