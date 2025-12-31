@@ -5,6 +5,7 @@ class Assets {
   // static const String fontsGT Sectra Fine Regular = 'assets/fonts/GT Sectra Fine Regular.ttf';
   static const String imagesLogo = 'assets/images/Logo.png';
   static const String imagesTestImage = 'assets/images/test_image.png';
+  static const String imagesTestCover = 'assets/images/testcover.png';
   static const kGtSectraFine = "GT Sectra Fine";
 
 }
