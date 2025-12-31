@@ -9,11 +9,11 @@ import '../../features/splash/view/splash_view.dart';
 abstract class AppRouter {
   static const homeView = '/homeView';
   static const bookDetailsView = '/bookDetailsView';
-   static const searchView = '/searchView';
+  static const searchView = '/searchView';
   // static const String SplashView = '/SplashView';
 
 
-static final router = GoRouter(
+  static final router = GoRouter(
     routes: [
       GoRoute(
         path: '/',
