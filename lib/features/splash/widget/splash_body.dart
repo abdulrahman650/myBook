@@ -60,6 +60,7 @@ void dispose(){
                    fontWeight: FontWeight.bold,
                    fontSize: 70,
                    fontFamily: Assets.kGtSectraFine,
+                   color: Colors.white,
                  ),
 
                   textAlign: TextAlign.center,
@@ -74,6 +75,7 @@ void dispose(){
                   return SlideTransition(position: slidingAnimation,
                       child: Text("Reed Free Books",style: text.titleMedium!.copyWith(
                         fontFamily: Assets.kGtSectraFine,
+                        color: Colors.white,
                       ),
                         textAlign: TextAlign.center,
 

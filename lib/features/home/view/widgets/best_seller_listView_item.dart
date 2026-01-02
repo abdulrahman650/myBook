@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mybook/core/conestent/theme_cubit.dart';
 import 'package:mybook/features/home/view/widgets/custom_book_item.dart';
 import '../../../../core/conestent/assets.dart';
+import '../../../../core/conestent/colors.dart';
 import '../../../../core/utiles/app_router.dart';
 import '../../data/book_model/book_model.dart';
 import 'book_rating.dart';
@@ -19,7 +21,9 @@ class BookListViewItem extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.blueGrey[100],
+          color: context.isDark
+              ? AppColors.primary
+              : Colors.blueGrey[100],
           borderRadius: BorderRadius.circular(16),
         ),
 

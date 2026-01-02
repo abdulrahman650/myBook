@@ -4,6 +4,7 @@ import 'package:mybook/core/conestent/themes.dart';
 import 'package:mybook/core/services/services_locator.dart';
 import 'package:mybook/features/home/logic/featured_books_cubit/featured_books_cubit.dart';
 import 'package:mybook/features/home/logic/home_repos/home_repo_impl.dart';
+import 'core/conestent/theme_cubit.dart';
 import 'core/utiles/app_router.dart';
 import 'features/home/logic/newest_books_cubit/newest_books_cubit.dart';
 
@@ -28,16 +29,30 @@ class MyBook extends StatelessWidget {
           create: (context) =>
           NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
         ),
+        BlocProvider(
+          create: (_) => ThemeCubit(),
+        ),
       ],
-      child: MaterialApp.router(
-        routerConfig: AppRouter.router,
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.CustomeLightTheme,
-        // themeMode: ThemeMode.light,
-        // darkTheme: AppTheme.CustomeDarkTheme,
-
-
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, themeMode) {
+          return MaterialApp.router(
+            routerConfig: AppRouter.router,
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.CustomeLightTheme,
+            darkTheme: AppTheme.CustomeDarkTheme,
+            themeMode: themeMode,
+          );
+        },
       ),
+      // child: MaterialApp.router(
+      //   routerConfig: AppRouter.router,
+      //   debugShowCheckedModeBanner: false,
+      //   theme: AppTheme.CustomeLightTheme,
+      //   // themeMode: ThemeMode.light,
+      //   // darkTheme: AppTheme.CustomeDarkTheme,
+      //
+      //
+      // ),
     );
 
   }

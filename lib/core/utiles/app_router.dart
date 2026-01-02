@@ -31,10 +31,6 @@ abstract class AppRouter {
         path: homeView,
         builder: (context, state) => const HomeView(),
       ),
-      // GoRoute(
-      //   path: bookDetailsView,
-      //   builder: (context, state) => const BookDetailsView(),
-      // ),
       GoRoute(
         path: bookDetailsView,
         builder: (context, state) => BlocProvider(
@@ -46,6 +42,7 @@ abstract class AppRouter {
           ),
         ),
       ),
+
     ],
   );
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mybook/core/conestent/theme_cubit.dart';
 
+import '../../../../core/conestent/colors.dart';
 import '../../logic/search_cubit/search_cubit.dart';
 
 class CustomSearchTextField extends StatelessWidget {
@@ -10,6 +12,7 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+
       onSubmitted: (value) {
         BlocProvider.of<SearchCubit>(context).SearchBooks(query: value);
       },
@@ -17,6 +20,11 @@ class CustomSearchTextField extends StatelessWidget {
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
         hintText: 'Search',
+        hintStyle: TextStyle(
+          color: context.isDark
+          ? AppColors.white
+          : AppColors.black,
+        ),
         suffixIcon: IconButton(
           onPressed: () {
             FocusScope.of(context).unfocus();
@@ -36,7 +44,7 @@ class CustomSearchTextField extends StatelessWidget {
   OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
       borderSide: const BorderSide(
-        color: Colors.white,
+        color: Colors.grey,
       ),
       borderRadius: BorderRadius.circular(
         12,
