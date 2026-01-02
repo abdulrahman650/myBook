@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mybook/core/conestent/colors.dart';
 import 'package:mybook/features/home/data/book_model/book_model.dart';
 
 import '../logic/similar_books_cubit/similar_books_cubit.dart';
@@ -22,6 +23,10 @@ class _BookDetailsViewState extends State<BookDetailsView> {
   }
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: BooksDetailsViewBody(bookModel: widget.bookModel,));
+    return Container(
+      color: AppColors.white,
+      child: SafeArea(
+          child: BooksDetailsViewBody(bookModel: widget.bookModel,)),
+    );
   }
 }

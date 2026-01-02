@@ -17,55 +17,62 @@ class BookListViewItem extends StatelessWidget {
       onTap: () {
         GoRouter.of(context).push(AppRouter.bookDetailsView,extra: bookModel);
       },
-      child: Row(
-        children: [
-          SizedBox(
-            height: 125,
-            child: CustomBookImage(
-              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.blueGrey[100],
+          borderRadius: BorderRadius.circular(16),
+        ),
+
+        child: Row(
+          children: [
+            SizedBox(
+              height: 125,
+              child: CustomBookImage(
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
+              ),
             ),
-          ),
-          Gap(30),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * .5,
-                  child: Text(
-                    bookModel.volumeInfo.title!,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: text.titleLarge!.copyWith(
-                      fontFamily: Assets.kGtSectraFine,
-                    ),
-                  ),
-                ),
-                Gap(3),
-                Text(
-                  bookModel.volumeInfo.authors?[0] ?? '',
-                  style: text.titleSmall!.copyWith(
-                  ),
-                ),
-                Gap(3),
-                Row(
-                  children: [
-                    Text(
-                      "Free",
+            Gap(30),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * .5,
+                    child: Text(
+                      bookModel.volumeInfo.title!,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: text.titleLarge!.copyWith(
                         fontFamily: Assets.kGtSectraFine,
                       ),
                     ),
-                    const Spacer(),
-                    BookRating(
-                      rating: bookModel.volumeInfo.averageRating?.toInt() ?? 0,
-                      count: bookModel.volumeInfo.ratingsCount ?? 0,
-                    ),                  ],
-                ),
-              ],
+                  ),
+                  Gap(3),
+                  Text(
+                    bookModel.volumeInfo.authors?[0] ?? '',
+                    style: text.titleSmall!.copyWith(
+                    ),
+                  ),
+                  Gap(3),
+                  Row(
+                    children: [
+                      Text(
+                        "Free",
+                        style: text.titleLarge!.copyWith(
+                          fontFamily: Assets.kGtSectraFine,
+                        ),
+                      ),
+                      const Spacer(),
+                      BookRating(
+                        rating: bookModel.volumeInfo.averageRating?.toInt() ?? 0,
+                        count: bookModel.volumeInfo.ratingsCount ?? 0,
+                      ),                  ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

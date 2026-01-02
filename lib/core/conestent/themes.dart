@@ -6,9 +6,9 @@ import 'colors.dart';
 
 class AppTheme {
   static ThemeData CustomeLightTheme = ThemeData(
-    // scaffoldBackgroundColor: AppColors.backgroundWhite,
+     scaffoldBackgroundColor: AppColors.white,
     appBarTheme: AppBarTheme(
-      // backgroundColor: AppColors.backgroundWhite,
+      backgroundColor: AppColors.white,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.light,
@@ -17,7 +17,7 @@ class AppTheme {
       titleTextStyle: TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w500,
-        color: AppColors.primary,
+        color: AppColors.black,
       ),
     ),
 
@@ -46,7 +46,11 @@ class AppTheme {
         borderSide: BorderSide(color: AppColors.red),
       ),
     ),
-
+    brightness: Brightness.light,
+    iconTheme: IconThemeData(color: AppColors.black),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(iconColor: WidgetStateProperty.all(AppColors.black)),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
@@ -59,12 +63,12 @@ class AppTheme {
         headlineSmall: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
-            color: AppColors.white,
+            color: AppColors.black,
         ),
         titleLarge: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: AppColors.white,
+          color: AppColors.black,
           fontFamily: Assets.kGtSectraFine,
         ),
         titleMedium: TextStyle(
@@ -74,12 +78,12 @@ class AppTheme {
         titleSmall: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w400,
-          color: AppColors.white,
+          color: AppColors.black,
         ),
         displaySmall: TextStyle(
           fontSize: 36,
           fontWeight: FontWeight.bold,
-          color: AppColors.white,
+          color: AppColors.black,
         ),
       ),
     ),

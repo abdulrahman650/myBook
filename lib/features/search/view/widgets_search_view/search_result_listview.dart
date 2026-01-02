@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../core/utiles/custom_error_widget.dart';
 import '../../../home/view/widgets/best_seller_listView_item.dart';
 import '../../logic/search_cubit/search_cubit.dart';
@@ -31,17 +30,6 @@ class SearchResultListView extends StatelessWidget {
       },
     );
 
-    // return ListView.builder(
-    //   padding: EdgeInsets.zero,
-    //   itemCount: 10,
-    //   itemBuilder: (context, index) {
-    //     return Padding(
-    //       padding: const EdgeInsets.symmetric(vertical: 10.0),
-    //       // child: const BookListViewItem(),
-    //       child: Text('data'),
-    //     );
-    //   },
-    // );
   }
 }
 

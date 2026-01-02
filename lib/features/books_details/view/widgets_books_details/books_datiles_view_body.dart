@@ -5,6 +5,7 @@ import 'package:skeletonizer/skeletonizer.dart';
 
 import 'package:mybook/features/books_details/view/widgets_books_details/similar_books_section.dart';
 import 'package:mybook/features/home/data/book_model/book_model.dart';
+import '../../../../core/conestent/colors.dart';
 import '../../logic/similar_books_cubit/similar_books_cubit.dart';
 
 import 'books_details_section.dart';
@@ -20,6 +21,7 @@ class BooksDetailsViewBody extends StatelessWidget {
     return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
       builder: (context, state) {
         return Skeletonizer(
+
           enabled: state is SimilarBooksLoading,
           child: CustomScrollView(
             slivers: [

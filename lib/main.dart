@@ -15,7 +15,6 @@ void main() {
 class MyBook extends StatelessWidget {
   const MyBook({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -33,8 +32,9 @@ class MyBook extends StatelessWidget {
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
-        theme: AppTheme.CustomeDarkTheme,
-        darkTheme: AppTheme.CustomeDarkTheme,
+        theme: AppTheme.CustomeLightTheme,
+        // themeMode: ThemeMode.light,
+        // darkTheme: AppTheme.CustomeDarkTheme,
 
 
       ),
