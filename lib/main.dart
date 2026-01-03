@@ -10,10 +10,7 @@ import 'core/utiles/app_router.dart';
 import 'features/home/logic/newest_books_cubit/newest_books_cubit.dart';
 import 'package:device_preview/device_preview.dart';
 
-// void main() {
-//   setupServiceLocator();
-//   runApp(const MyBook());
-// }
+
 void main() {
   setupServiceLocator();
   runApp(
