@@ -3,7 +3,6 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/conestent/assets.dart';
 import '../../../core/conestent/colors.dart';
-import '../../home/view/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -27,8 +26,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     await GoRouter.of(context).push("/homeView");
 
   }
-
-
 
   @override
 void dispose(){
@@ -56,8 +53,6 @@ void dispose(){
                   builder: (context, scale, child) =>
                       Transform.scale(scale: scale, child: child),
                   child:
-                      // Image.asset("assets/images/logo_fg.png")
-
                  Text("My Books",style:text.displaySmall!.copyWith(
                    fontWeight: FontWeight.bold,
                    fontSize: 70,

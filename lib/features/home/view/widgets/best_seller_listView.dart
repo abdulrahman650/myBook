@@ -12,7 +12,9 @@ class BestSellerListview extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
-        if (state is NewestBooksSuccess) {
+        if (state is NewestBooksLoading) {
+          return  Center(child: CircularProgressIndicator());
+        } else if (state is NewestBooksSuccess) {
           return ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,

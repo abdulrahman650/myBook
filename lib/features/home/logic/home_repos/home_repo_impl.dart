@@ -55,6 +55,7 @@ class HomeRepoImpl implements HomeRepo {
 
       return right(books);
     } catch (e) {
+      print('Web-safe error: $e'); // بدل ما يظهر overlay
       if (e is DioException) {
         return left(
           ServerFailure.fromDioError(e),

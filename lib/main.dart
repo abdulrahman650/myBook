@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mybook/core/conestent/themes.dart';
@@ -7,15 +8,23 @@ import 'package:mybook/features/home/logic/home_repos/home_repo_impl.dart';
 import 'core/conestent/theme_cubit.dart';
 import 'core/utiles/app_router.dart';
 import 'features/home/logic/newest_books_cubit/newest_books_cubit.dart';
+import 'package:device_preview/device_preview.dart';
 
+// void main() {
+//   setupServiceLocator();
+//   runApp(const MyBook());
+// }
 void main() {
   setupServiceLocator();
-  runApp(const MyBook());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const MyBook(),
+    ),
+  );
 }
-
 class MyBook extends StatelessWidget {
   const MyBook({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -36,6 +45,11 @@ class MyBook extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {
           return MaterialApp.router(
+
+            useInheritedMediaQuery: true,
+            locale: DevicePreview.locale(context),
+            builder: DevicePreview.appBuilder,
+
             routerConfig: AppRouter.router,
             debugShowCheckedModeBanner: false,
             theme: AppTheme.CustomeLightTheme,
@@ -44,15 +58,6 @@ class MyBook extends StatelessWidget {
           );
         },
       ),
-      // child: MaterialApp.router(
-      //   routerConfig: AppRouter.router,
-      //   debugShowCheckedModeBanner: false,
-      //   theme: AppTheme.CustomeLightTheme,
-      //   // themeMode: ThemeMode.light,
-      //   // darkTheme: AppTheme.CustomeDarkTheme,
-      //
-      //
-      // ),
     );
 
   }

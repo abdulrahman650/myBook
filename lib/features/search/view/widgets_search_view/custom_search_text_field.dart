@@ -7,57 +7,6 @@ import 'package:mybook/core/conestent/theme_cubit.dart';
 
 import '../../../../core/conestent/colors.dart';
 import '../../logic/search_cubit/search_cubit.dart';
-
-// class CustomSearchTextField extends StatelessWidget {
-//   const CustomSearchTextField({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return TextField(
-//       onChanged: (value) {
-//         BlocProvider.of<SearchCubit>(context)
-//             .searchBooks(query: value);
-//       },
-//
-//       // onSubmitted: (value) {
-//       //   BlocProvider.of<SearchCubit>(context).SearchBooks(query: value);
-//       // },
-//       decoration: InputDecoration(
-//         enabledBorder: buildOutlineInputBorder(),
-//         focusedBorder: buildOutlineInputBorder(),
-//         hintText: 'Search',
-//         hintStyle: TextStyle(
-//           color: context.isDark
-//           ? AppColors.white
-//           : AppColors.black,
-//         ),
-//         suffixIcon: IconButton(
-//           onPressed: () {
-//             FocusScope.of(context).unfocus();
-//           },
-//           icon: const Opacity(
-//             opacity: .8,
-//             child: Icon(
-//               FontAwesomeIcons.magnifyingGlass,
-//               size: 22,
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-//
-//   OutlineInputBorder buildOutlineInputBorder() {
-//     return OutlineInputBorder(
-//       borderSide: const BorderSide(
-//         color: Colors.grey,
-//       ),
-//       borderRadius: BorderRadius.circular(
-//         12,
-//       ),
-//     );
-//   }
-// }
 class CustomSearchTextField extends StatefulWidget {
   const CustomSearchTextField({super.key});
 

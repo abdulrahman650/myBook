@@ -26,17 +26,4 @@ class SearchCubit extends Cubit<SearchState> {
     );
   }
 
-
-  // void SearchBooks({required String query}) async {
-  //   if (query.isEmpty) return;
-  //
-  //   emit(SearchLoading());
-  //
-  //   var result = await searchRepo.searchBooks(query: query);
-  //
-  //   result.fold(
-  //     (failure) => emit(SearchFailure(failure.errMessage)),
-  //     (books) => emit(SearchSuccess(books)),
-  //   );
-  // }
 }

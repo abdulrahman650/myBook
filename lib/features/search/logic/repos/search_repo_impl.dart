@@ -14,7 +14,6 @@ class SearchRepoImpl implements SearchRepo {
     required String query,
   }) async {
     try {
-      // var data = await apiService.get(endPoint: 'volumes?q=$query');
       var data = await apiService.get(
         endPoint: 'volumes?q=subject:$query',
       );
@@ -26,9 +25,6 @@ class SearchRepoImpl implements SearchRepo {
           books.add(BookModel.fromJson(item));
         }
       }
-      // for (var item in data['items']) {
-      //   books.add(BookModel.fromJson(item));
-      // }
 
       return right(books);
     } catch (e) {

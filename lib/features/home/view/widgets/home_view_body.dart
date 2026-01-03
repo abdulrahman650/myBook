@@ -23,7 +23,6 @@ class HomeViewBody extends StatelessWidget {
           enabled:
           state is FeaturedBooksLoading ||
               context.watch<NewestBooksCubit>().state is NewestBooksLoading,
-          // enabled: state is FeaturedBooksLoading,
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
@@ -35,11 +34,8 @@ class HomeViewBody extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 30),
                       child: CustomAppBar(),
                     ),
-
                     const FeaturedBooksListView(),
-
                     const Gap(50),
-
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Text(

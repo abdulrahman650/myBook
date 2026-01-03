@@ -34,6 +34,7 @@ class BookListViewItem extends StatelessWidget {
               child: CustomBookImage(
                 imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
               ),
+
             ),
             Gap(30),
             Expanded(
