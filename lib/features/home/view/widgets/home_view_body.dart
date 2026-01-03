@@ -48,7 +48,7 @@ class HomeViewBody extends StatelessWidget {
                             .copyWith(
                           fontSize: 22,
                           fontWeight: FontWeight.w600,
-                          fontFamily: Assets.kGtSectraFine,
+                          // fontFamily: Assets.kGtSectraFine,
                         ),
                       ),
                     ),
