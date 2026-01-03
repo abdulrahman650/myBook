@@ -10,16 +10,33 @@ class SearchCubit extends Cubit<SearchState> {
   final SearchRepo searchRepo;
   SearchCubit(this.searchRepo) : super(SearchInitial());
 
-  void SearchBooks({required String query}) async {
-    if (query.isEmpty) return;
+  void searchBooks({required String query}) async {
+    if (query.isEmpty) {
+      emit(SearchInitial());
+      return;
+    }
 
     emit(SearchLoading());
 
     var result = await searchRepo.searchBooks(query: query);
 
     result.fold(
-      (failure) => emit(SearchFailure(failure.errMessage)),
-      (books) => emit(SearchSuccess(books)),
+          (failure) => emit(SearchFailure(failure.errMessage)),
+          (books) => emit(SearchSuccess(books)),
     );
   }
+
+
+  // void SearchBooks({required String query}) async {
+  //   if (query.isEmpty) return;
+  //
+  //   emit(SearchLoading());
+  //
+  //   var result = await searchRepo.searchBooks(query: query);
+  //
+  //   result.fold(
+  //     (failure) => emit(SearchFailure(failure.errMessage)),
+  //     (books) => emit(SearchSuccess(books)),
+  //   );
+  // }
 }
