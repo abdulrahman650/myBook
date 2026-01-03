@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Text("My Books",style:text.titleLarge!.copyWith(
             fontWeight: FontWeight.w600,
-            fontFamily: Assets.kGtSectraFine,
+            // fontFamily: Assets.kGtSectraFine,
           ),
           ),
 Spacer(),
