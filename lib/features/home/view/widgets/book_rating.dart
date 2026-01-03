@@ -18,32 +18,35 @@ class BookRating extends StatelessWidget {
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
 
-    return Row(
-      mainAxisAlignment: mainAxisAlignment,
-      children: [
-        const Icon(
-          FontAwesomeIcons.solidStar,
-          size: 14,
-          color: AppColors.yellow,
-        ),
-        const SizedBox(
-          width: 6.3,
-        ),
-        Text(
-          rating.toString(),
-          style:text.titleMedium,
-        ),
-        const SizedBox(
-          width: 5,
-        ),
-        Opacity(
-          opacity: .5,
-          child: Text(
-            '($count)',
-            style: text.titleSmall
+    return Padding(
+      padding: const EdgeInsets.only(right: 8.0),
+      child: Row(
+        mainAxisAlignment: mainAxisAlignment,
+        children: [
+          const Icon(
+            FontAwesomeIcons.solidStar,
+            size: 14,
+            color: AppColors.yellow,
           ),
-        )
-      ],
+          const SizedBox(
+            width: 6.3,
+          ),
+          Text(
+            rating.toString(),
+            style:text.titleMedium,
+          ),
+          const SizedBox(
+            width: 5,
+          ),
+          Opacity(
+            opacity: .5,
+            child: Text(
+              '($count)',
+              style: text.titleSmall
+            ),
+          )
+        ],
+      ),
     );
   }
 }
