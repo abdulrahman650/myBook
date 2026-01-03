@@ -56,6 +56,8 @@ void dispose(){
                   builder: (context, scale, child) =>
                       Transform.scale(scale: scale, child: child),
                   child:
+                      // Image.asset("assets/images/logo_fg.png")
+
                  Text("My Books",style:text.displaySmall!.copyWith(
                    fontWeight: FontWeight.bold,
                    fontSize: 70,
@@ -64,8 +66,7 @@ void dispose(){
                  ),
 
                   textAlign: TextAlign.center,
-                )
-                  // Image.asset(Assets.imagesLogo),
+                ),
                 ),
               ),
               Gap(5),

@@ -163,7 +163,8 @@ class AppTheme {
       ),
     ),
 
-    textTheme: TextTheme(
+    textTheme: GoogleFonts.montserratTextTheme(
+    TextTheme(
       headlineSmall: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.bold,
@@ -190,6 +191,7 @@ class AppTheme {
         color: AppColors.white,
       ),
     ),
+  ),
 
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
