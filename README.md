@@ -1,6 +1,6 @@
 # mybook
 
-A new Flutter project.
+Flutter app to browse and read books from various categories. Features search by title or category, Cubit state management, Google Books API integration, error handling, clean file structure, and light/dark theme support.
 
 ## Getting Started
 
